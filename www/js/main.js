@@ -269,7 +269,7 @@ var BB = {
         BB.gameState = GAMESTATE_STOP;
         vibrate();
         ncmbController.sendScore(BB.score);
-        ncmbController.sendScore(BB.score);
+        
     },
     
     // Game Clear
@@ -278,6 +278,7 @@ var BB = {
         else alert("Cleared!");
         
         BB.gameState = GAMESTATE_STOP;
+        ncmbController.sendScore(BB.score);
     }
 }
 
@@ -341,25 +342,8 @@ function init() {
     requestAnimFrame(animate);
     // main.js -> init()
 
-ncmbController.init(BB.screenSize);
-
-// ncmbController.js
-
-var ncmbController = {
-    APPLICATION_KEY: "YOUR_APPLICATION_KEY",
-    CLIENT_KEY: "YOUR_CLIENT_KEY",
-
-    ncmb: null,
-    currentUser: null,  // ログインしたユーザーのオブジェクトを格納
-    screenSize: null,    // 画面サイズを格納
-
-    // 初期化
-    init: function(screenSize) {
-        var self = this;
-        self.ncmb = new NCMB(self.APPLICATION_KEY, self.CLIENT_KEY);    // mobile backendの初期化
-        self.screenSize = screenSize;
-    }
-　}
+ ncmbController.init(BB.screenSize);
+    
 }
 
 
