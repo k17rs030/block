@@ -343,6 +343,7 @@ function init() {
     // main.js -> init()
 
  ncmbController.init(BB.screenSize);
+ ncmbController.createUser();
     
 }
 
