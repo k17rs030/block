@@ -2,7 +2,7 @@
     
 var SETTINGS_GRAVITY = 0.07,
     SETTINGS_FPS = 30,
-    SETTINGS_BALL_NUM = 1,
+    SETTINGS_BALL_NUM = 2,
     SETTINGS_BOUND_X = 0.13,
     SETTINGS_BOUND_Y = 1.04,
     SETTINGS_ACCELEROMETER_RELOAD_FREQ = 100,
@@ -42,15 +42,15 @@ var BB = {
     // Create blocks map
     setMap: function() {
         var blockMap = [
-            [null,      null,       null,       null,       null,       'blue',     null,       null,       null,       null],
-            [null,      null,       null,       null,       'red',      'red',      'blue',     null,       null,       null],
-            [null,      null,       null,       'red',      'red',      null,       null,       'blue',     null,       null],
-            [null,      null,       'red',      'red',      null,       null,       null,       null,       'blue',     null],    
-            [null,      'red',      'red',      null,       null,       'gold',     null,       null,       'silver',   'silver'],    
-            [null,      null,       'red',      'red',       null,       null,       null,       'silver',   'silver',   null],    
-            [null,      null,       null,       'red',      'red',       null,       'silver',   'silver',   null,       null],    
-            [null,      null,       null,       null,       'silver',   'silver',   'silver',   null,       null,       null],
-            [null,      null,       null,       null,       null,       'silver',   null,       null,       null,       null]
+            [null,null,'red','silver','red','gold','gold','red','silver','red',null,null],
+            [null,'red', null, null, null ,null, null, null, null,null,'red'],
+            [null,'blue',null,null,null,'silver','silver',null,null,null,'blue'],
+            [null,'red',null,'blue',null,null,null,null,'blue',null,'red'],    
+            [null,'blue',null,'blue',null,'gold','gold',null,'blue',null,'blue'],    
+            [null,'red',null,'blue',null,null,null,null,'blue',null,'red'],    
+            [null,'blue',null,'blue','red','green','red','green','blue',null,'blue'],    
+            [null,'red', null, null, null ,null, null, null, null,null,'red'],
+            [null,null,null,'red','red','red','red','red','red',null,null]
         ];
         
         for(j = 0; j < blockMap.length; j++) {
@@ -344,6 +344,8 @@ function init() {
 
  ncmbController.init(BB.screenSize);
  ncmbController.createUser();
+ 
+
     
 }
 

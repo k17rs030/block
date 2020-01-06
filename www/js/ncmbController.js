@@ -14,10 +14,13 @@ var ncmbController = {
     currentUser: null,  // ログインしたユーザーのオブジェクトを格納
     screenSize: null,    // 画面サイズを格納
 
+    
+
+
     uuid: function() { var uuid = "", i, random; for (i = 0; i < 32; i++) { random = Math.random() * 16 | 0;
-if (i == 8 || i == 12 || i == 16 || i == 20) { uuid += "-" } uuid += (i == 12 ? 4 : (i == 16 ? (random & 3 | 8) : random)).toString(16);
-} return uuid;
-},
+    if (i == 8 || i == 12 || i == 16 || i == 20) { uuid += "-" } uuid += (i == 12 ? 4 :       (i == 16 ? (random & 3 | 8) : random)).toString(16);
+    } return uuid;
+    },
 
     createUser: function() {
     var self = this;
@@ -41,6 +44,8 @@ if (i == 8 || i == 12 || i == 16 || i == 20) { uuid += "-" } uuid += (i == 12 ? 
             alert("ユーザー登録に失敗しました");
         });
 },
+
+
 
     
    sendScore: function(score) {
