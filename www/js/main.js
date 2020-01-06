@@ -209,7 +209,7 @@ var BB = {
         }
         BB.addPaddle();
         
-        var resetLabel = new PIXI.Text("RESET", {font: "24px/1.2 vt", fill: "red"});
+        var resetLabel = new PIXI.Text("やり直し", {font: "24px/1.2 vt", fill: "white"});
         resetLabel.position.x = 18;
         resetLabel.position.y = BB.renderer.height - 52;
         BB.stage.addChild(resetLabel);
@@ -219,15 +219,15 @@ var BB = {
             BB.reset();  
         };
         setTimeout(function() {
-            resetLabel.setText("RESET"); //for Android
+            resetLabel.setText("やり直し"); //for Android
         }, 1000, resetLabel);
         
-        var label = new PIXI.Text("SCORE:", {font: "24px/1.2 vt", fill: "red"});
+        var label = new PIXI.Text("得点:", {font: "24px/1.2 vt", fill: "yellow"});
         label.position.x = 20;
         label.position.y = 20;
         BB.stage.addChild(label);
         setTimeout(function() {
-            label.setText("SCORE:"); //for Android
+            label.setText("得点:"); //for Android
         }, 1000, label);
         
         BB.scoreLabel = new PIXI.Text("0", {font: "24px/1.2 vt", fill: "white"});
@@ -472,3 +472,6 @@ function getUa() {
 }
 
 })();
+
+
+
